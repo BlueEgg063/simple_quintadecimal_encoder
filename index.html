@@ -4,7 +4,7 @@
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#00ffe1">
   <meta charset="UTF-8">
-  <title>Tetradecimal Converter</title>
+  <title>Quintadecimal Converter</title>
   <style>
     body {
       font-family: monospace;
@@ -49,14 +49,14 @@
   </style>
 </head>
 <body>
-  <h1>🔣 Tetradecimal Converter</h1>
+  <h1>🔣 Quintadecimal Converter</h1>
   
   <select id="mode">
     <option value="text2tri">Text → Tetradecimal</option>
     <option value="tri2text">Tetradecimal → Text</option>
   </select>
 
-  <textarea id="input" rows="4" placeholder="Enter your text or tetradecimal string..."></textarea>
+  <textarea id="input" rows="4" placeholder="Enter your text or quintadecimal string..."></textarea>
 
   <button onclick="convert()">Convert</button>
 
@@ -71,7 +71,7 @@
       .catch(err => console.error('Service worker registration failed:', err));
   });
 }
-    const trilookup = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C","D"];
+    const trilookup = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C","D","E"];
 
     function textToTridecimal(text) {
       let result = [];
@@ -79,8 +79,8 @@
         let code = char.charCodeAt(0);
         let digits = [];
         while (code > 0) {
-          digits.unshift(trilookup[code % 14]);
-          code = Math.floor(code / 14);
+          digits.unshift(trilookup[code % 15]);
+          code = Math.floor(code / 15);
         }
         result.push(digits.join('') || '0');
       }
