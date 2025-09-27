@@ -52,8 +52,8 @@
   <h1>🔣 Quintadecimal Converter</h1>
   
   <select id="mode">
-    <option value="text2tri">Text → Tetradecimal</option>
-    <option value="tri2text">Tetradecimal → Text</option>
+    <option value="text2tri">Text → Quintadecimal</option>
+    <option value="tri2text">Quintadecimal → Text</option>
   </select>
 
   <textarea id="input" rows="4" placeholder="Enter your text or quintadecimal string..."></textarea>
@@ -97,7 +97,7 @@
           let power = chars.length - i - 1;
           let index = trilookup.indexOf(chars[i]);
           if (index === -1) return `Invalid digit: "${chars[i]}"`;
-          value += index * Math.pow(14, power);
+          value += index * Math.pow(15, power);
         }
         result.push(String.fromCharCode(value));
       }
